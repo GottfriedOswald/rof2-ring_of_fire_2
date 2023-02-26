@@ -1,0 +1,28 @@
+.player-frame{
+    background-color: rgba(198, 207, 204, 0.9);
+    width: 200px;
+    height: 60px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+
+.player-container{
+    display: flex;
+    align-items: center;
+}
+
+.profilePlayerPicBlue{
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+}
+
+.player-active{
+    background-color: orange;
+    width: 225px;
+    height: 60px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    position: absolute;
+    right: 0;
+}

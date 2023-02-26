@@ -1,0 +1,56 @@
+<app-player
+  class="player-position"
+  *ngFor="let player of game.players, let i = index"
+  [ngStyle]="{ 'top.px': 40+(i*65) }"
+  [name] = 'player'
+  [playerActive]="i == game.currentPlayer"
+></app-player>
+
+<app-game-instructions [card]="currentCard" class="game-instruction-position"></app-game-instructions>
+
+<div class="game-field">
+  <div class="card-stack">
+    <img
+      *ngFor="let card of [0, 1, 2, 3]; let i = index"
+      [ngStyle]="{ 'right.px': (i - 17) * 6 }"
+      src="./../../assets/img/cards/card_cover.png"
+      alt="images of card-stack"
+    />
+
+    <img
+      class="top-card"
+      (click)="takeCard()"
+      style="right: -70px; rotate: -3deg"
+      src="./../../assets/img/cards/card_cover.png"
+      alt="image of one card"
+    />
+
+    <img
+      class="playedCard"
+      *ngFor="let playedCard of game.playedCards; let j = index"
+      [ngStyle]="{ 'right.px': (j - 70) * 1 }"
+      src="./../../assets/img/cards/{{ playedCard }}.png"
+      alt="Image of the played Card"
+    />
+
+    <img
+      class="pickCard"
+      *ngIf="animateCard"
+      style="right: -70px"
+      src="./../../assets/img/cards/{{ currentCard }}.png"
+      alt="image of one card"
+    />
+  </div>
+  
+  <div class="btn-addPlayer">
+    <button mat-fab matTooltip="Primary" (click)="openDialog()" color="primary" aria-label="Example fab with a plus icon">
+      <mat-icon>add_circle</mat-icon>
+    </button>
+  </div>
+  
+</div>
+
+
+<div>
+  <button class="btn-home" routerLink=""><mat-icon>home</mat-icon></button>
+</div>

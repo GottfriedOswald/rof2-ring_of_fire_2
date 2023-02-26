@@ -1,0 +1,86 @@
+.btn-home{
+    width: 56px;
+    height: 56px;
+    background-color: black;
+    color: cornsilk;
+    font-size: 35px;
+    border-radius: 50%;
+
+    &:hover{
+        cursor: pointer;
+    }
+
+    position: absolute;
+    top: 48px;
+    left: 16px;
+}
+
+.game-field{
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    background-image: url('./../../assets/img/bg/bg-wood-plank.jpg');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-stack{
+    position: relative;
+
+    img{
+        position: absolute;
+        bottom: -250px;
+        width: 180px;
+    }
+}
+
+.top-card{
+    transition: all ease-in-out 150ms;
+
+    &:hover{
+        transform: scale(1.1);
+    }
+}
+
+.pickCard{
+    transition: all ease-in-out 150ms;
+    animation: pickCardAnimation 0.45s ease-in-out;
+    transform: scale(1.1) rotateZ(-10deg) translateY(-300px) translateX(-50px);
+    
+}
+
+.playedCard{
+    transform: scale(1.1) rotateZ(-10deg) translateY(-300px) translateX(-50px);
+}
+
+.player-position{
+    position: absolute;
+    right: 0;
+}
+
+.btn-addPlayer{
+    position: absolute;
+    left: 16px;
+    top: 120px;
+}
+
+.game-instruction-position{
+    position: absolute;
+    bottom: 20px;
+    left: 80px;
+    right: 80px;
+}
+
+
+@keyframes pickCardAnimation {
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.5);
+    }
+    100%{
+        transform: scale(1.1) rotateZ(-10deg) translateY(-300px) translateX(-50px);
+    }
+}

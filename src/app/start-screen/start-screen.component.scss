@@ -1,0 +1,22 @@
+.startScreen001{
+color: white;
+background-color: #404040;
+width: 500vw;
+height: 100vh;
+max-width: 100vw;
+display: flex;
+justify-content: center;
+align-items: center;
+// position: relative;
+}
+
+.startbanner-rot{
+    position: absolute;
+    bottom: 150px;
+    width: 200px;
+
+    &:hover{
+        cursor: pointer;
+        filter: brightness(1.55);
+    }
+}
